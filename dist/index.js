@@ -74,12 +74,12 @@ function run() {
                     yield core.summary.addHeading(`❌ GPL licenses are not allowed.`).write();
                 }
                 else {
-                    core.setFailed("error: " + error);
+                    core.setFailed("" + error);
                     yield core.summary.addRaw(`❌ ${error}`).write();
                 }
             }
             else {
-                core.setFailed("error: " + error);
+                core.setFailed("" + error);
                 yield core.summary.addRaw(`❌ ${error}`).write();
             }
         }

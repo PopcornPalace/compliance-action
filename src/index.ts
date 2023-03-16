@@ -34,11 +34,11 @@ async function run() {
         core.setFailed(`GPL licenses are not allowed.`);
         await core.summary.addHeading(`❌ GPL licenses are not allowed.`).write();
       } else {
-        core.setFailed("error: " + error)
+        core.setFailed("" + error)
         await core.summary.addRaw(`❌ ${error}`).write();
       }
     } else {
-      core.setFailed("error: " + error)
+      core.setFailed("" + error)
       await core.summary.addRaw(`❌ ${error}`).write();
     }
   }
