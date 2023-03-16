@@ -26,7 +26,7 @@ async function run() {
     if (!readmeFile) {
       throw new Error('README file not found');
     }
-    await core.summary.addHeading("✅ Your repository is fully compliant.").write();
+    await core.summary.addHeading("✅ Your repository is compliant.").write();
     core.info('All required files exist');
   } catch (error) {
     if (typeof error === 'object' && error !== null && 'message' in error && typeof error.message === 'string') {

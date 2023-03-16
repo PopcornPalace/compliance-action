@@ -64,7 +64,7 @@ function run() {
             if (!readmeFile) {
                 throw new Error('README file not found');
             }
-            yield core.summary.addHeading("✅ Your repository is fully compliant.").write();
+            yield core.summary.addHeading("✅ Your repository is compliant.").write();
             core.info('All required files exist');
         }
         catch (error) {
