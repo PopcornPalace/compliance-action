@@ -75,12 +75,12 @@ function run() {
                 }
                 else {
                     core.setFailed("error: " + error);
-                    yield core.summary.addHeading(`❌ Error: ${error}`).write();
+                    yield core.summary.addRaw(`❌ ${error}`).write();
                 }
             }
             else {
                 core.setFailed("error: " + error);
-                yield core.summary.addHeading(`❌ Error: ${error}`).write();
+                yield core.summary.addRaw(`❌ ${error}`).write();
             }
         }
     });
