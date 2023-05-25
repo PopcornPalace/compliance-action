@@ -45,14 +45,17 @@ function run() {
     return __awaiter(this, void 0, void 0, function* () {
         try {
             const dir = fs.realpathSync(process.cwd());
-            const licenseRegex = /^license.*$/i;
-            const licenseFile = fs.readdirSync(dir).find(fileName => licenseRegex.test(fileName));
-            if (!licenseFile) {
-                throw new Error('License file not found');
-            }
-            const licenseContent = fs.readFileSync(`${dir}/${licenseFile}`).toString();
-            if (!/MIT License|BSD License|Double Good/.test(licenseContent)) {
-                throw new Error('Only MIT, BSD and Double Good licenses are allowed');
+            const isCheckLicenseFile = Boolean(core.getInput('check_license'));
+            if (isCheckLicenseFile) {
+                const licenseRegex = /^license.*$/i;
+                const licenseFile = fs.readdirSync(dir).find(fileName => licenseRegex.test(fileName));
+                if (!licenseFile) {
+                    throw new Error('License file not found');
+                }
+                const licenseContent = fs.readFileSync(`${dir}/${licenseFile}`).toString();
+                if (!/MIT License|BSD License|Double Good/.test(licenseContent)) {
+                    throw new Error('Only MIT, BSD and Double Good licenses are allowed');
+                }
             }
             const cocRegex = /^code.*conduct.*$/i;
             const cocFile = fs.readdirSync(dir).find(fileName => cocRegex.test(fileName));

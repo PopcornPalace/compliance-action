@@ -30,6 +30,14 @@ jobs:
       - uses: PopcornPalace/compliance-action@main
 ```
 
+If we should check license file to add parameter:
+```     
+      - uses: PopcornPalace/compliance-action@main
+        with:
+          check_license: true
+```
+
+
 ## Contributing
 
 Contributions are welcome! Please see the [contributing guidelines](CONTRIBUTING.md) for details.

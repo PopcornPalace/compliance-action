@@ -2,10 +2,10 @@ name: Compliance action
 description: Validate files License and Readme in repository
 author: Valentyn Nastenko
 inputs:
-  debug:
-    description: "Whether to enable debug logging"
+  check_license:
+    description: "Is requred license file"
     required: false
-    default: "true"
+    default: "false"
 runs:
   using: "node16"
   main: "dist/index.js"
