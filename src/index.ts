@@ -4,9 +4,9 @@ import * as fs from 'fs';
 async function run() {
   try {
     const dir = fs.realpathSync(process.cwd());
-    const isCheckLicenseFile: boolean = Boolean(core.getInput('check_license'))
+    const isCheckLicenseFile: string = core.getInput('check_license')
 
-    if (isCheckLicenseFile) {
+    if (isCheckLicenseFile === "true") {
       const licenseRegex = /^license.*$/i;
       const licenseFile = fs.readdirSync(dir).find(fileName => licenseRegex.test(fileName));
       if (!licenseFile) {
