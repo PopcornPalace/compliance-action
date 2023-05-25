@@ -57,6 +57,9 @@ function run() {
                     throw new Error('Only MIT, BSD and Double Good licenses are allowed');
                 }
             }
+            else {
+                core.info('Skip check LICENSE file, if you want to check it then add boolean parameter check_license');
+            }
             const cocRegex = /^code.*conduct.*$/i;
             const cocFile = fs.readdirSync(dir).find(fileName => cocRegex.test(fileName));
             if (!cocFile) {

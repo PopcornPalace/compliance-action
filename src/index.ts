@@ -16,6 +16,8 @@ async function run() {
       if (!/MIT License|BSD License|Double Good/.test(licenseContent)) {
         throw new Error('Only MIT, BSD and Double Good licenses are allowed');
       }
+    } else {
+      core.info('Skip check LICENSE file, if you want to check it then add boolean parameter check_license');
     }
 
     const cocRegex = /^code.*conduct.*$/i;
