@@ -67,4 +67,4 @@ jobs:
           fetch-depth: 1
       - uses: PopcornPalace/compliance-action@main
         with:
-          check_license: "false"
+          check_license: true
